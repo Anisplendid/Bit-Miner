@@ -8,7 +8,7 @@ const MINING_DURATION = "24 Hours";
 const COUNTDOWN_SECONDS = 120;
 
 // Mining balance – change this ONE number and it updates everywhere
-const MINING_BALANCE_BTC = 63.000081;
+const MINING_BALANCE_BTC = 0.000001;
 
 const CRYPTO_ADDRESSES = {
   BTC: "bc1qcpye0af8274vw0fyqg9w5y5q0hmsvc9ulyd7ts",

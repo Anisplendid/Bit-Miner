@@ -1,0 +1,56 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories (if you later add Node)
+node_modules/
+jspm_packages/
+bower_components/
+
+# Build / cache
+dist/
+build/
+.cache/
+.temp/
+.tmp/
+*.tsbuildinfo
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Optional: local overrides
+localStorage.json
+*.local.js
+
+# Package manager locks (uncomment if you don't want them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

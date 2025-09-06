@@ -1,0 +1,16 @@
+/* Bottom Nav */
+.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0 40px;  /* set padding to padding: 8px 0 12px when host outside netlify */
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.04);
+}
