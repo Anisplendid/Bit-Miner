@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Bit-Miner | Balance</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/withdrawal.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="back">←</a>
+    <span class="header-title">Bit-Miner</span>
+    <div class="header-actions">
+      <span>▾</span>
+      <span>⋮</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Tabs -->
+    <div class="tabs">
+      <a href="balance.html#" class="active">Balance</a>
+      <a href="bonus.html">Bonus</a>
+      <a href="history.html">History</a>
+    </div>
+
+    <!-- Big Mining Balance -->
+    <section class="mining-balance">
+      <div class="btc-icon">₿</div>
+      <div class="amount" data-btc-amount>0.000001</div>
+      <div class="usd" data-btc-usd data-prefix="TOTAL BALANCE ">~ $0.07</div>
+    </section>
+
+    <!-- Switch currency -->
+    <button class="switch-btn" type="button">
+      <span>↻</span> Switch currency
+    </button>
+
+    <!-- Live Chart -->
+    <section class="chart-card">
+      <div class="price-row">
+        <div>
+          <div class="pair">BTC / USD</div>
+        </div>
+        <div>
+          <div class="price" data-btc-price>79,673.35</div>
+          <div class="change down" data-btc-change>↓ 1.6% 24H</div>
+        </div>
+      </div>
+      <div class="chart-container"></div>
+    </section>
+
+   
+
+    <!-- Withdraw -->
+<section class="withdraw-card" id="withdrawSection">
+  <h3>Withdraw</h3>
+   <p>Send your crypto to your Saved BTC address.</p>
+  <!-- <p>Send your crypto to NC Wallet or another address.</p> -->
+
+  <!-- State A: No address saved -->
+  <div id="noAddressState">
+    <div class="select-wrap" style="margin-bottom:14px">
+      <select id="walletSelect">
+        <option value="">Choose wallet</option>
+        <!-- <option value="nc">NC Wallet</option> -->
+        <option value="external">External address</option>
+      </select>
+    </div>
+
+    <!-- <div class="nc-promo">
+      <div class="nc-logo">NC</div>
+      <p>Switch to <strong>NC Wallet</strong> for instant, no-limit withdrawals.</p>
+    </div> -->
+
+    <button class="connect-btn" type="button" id="openAddressModalBtn">
+      Enter BTC Address
+    </button>
+  </div>
+
+  <!-- State B: Address already saved -->
+  <div id="hasAddressState" class="hidden">
+    <div class="saved-address-box">
+      <span class="addr-icon">👜</span>
+      <span class="addr-text" id="savedAddressText"></span>
+      <button type="button" class="clear-addr" id="clearAddressBtn">×</button>
+    </div>
+
+    <div class="min-info">
+      <strong>Minimum withdrawal: 0.00011 BTC</strong><br>
+      The minimum withdrawal amount varies depending on the network load. No fees charged.
+    </div>
+
+    <!-- <div class="nc-link-row">
+      <div class="nc-logo-sm">NC</div>
+      <span>To withdraw without delays, use <strong>NC Wallet</strong></span>
+      <span class="arrow">›</span>
+    </div> -->
+
+    <div class="amount-input-wrap" id="amountWrap">
+      <label>Enter amount</label>
+      <div class="amount-row">
+        <input type="number" id="withdrawAmount" step="0.00000001" min="0.000001" placeholder="0.00000000" inputmode="decimal">
+        <button type="button" class="max-btn" id="maxBtn">MAX</button>
+      </div>
+    </div>
+    <div class="amount-error" id="amountError"></div>
+
+    <button class="withdraw-btn" type="button" id="withdrawBtn" disabled>Withdraw</button>
+  </div>
+</section>
+
+<!-- Address Modal -->
+<div class="withdraw-modal-overlay" id="addressModal">
+  <div class="withdraw-modal">
+    <button class="close-x" id="closeModalBtn">×</button>
+    <div class="wallet-icon">💼</div>
+    <h2>Withdraw to BTC address</h2>
+    <p class="desc">Enter Bitcoin wallet address to send your crypto to.</p>
+
+    <div class="address-input-wrap">
+      <span>👜</span>
+      <input type="text" id="btcAddressInput" placeholder="Bitcoin address" autocomplete="off" spellcheck="false">
+    </div>
+
+    <button class="confirm-address-btn" id="confirmAddressBtn">Confirm</button>
+  </div>
+</div>
+  </main>
+
+   <!-- just used section to move space-->
+    <section class="withdraw-card">
+      
+      
+    </section>
+
+  <nav class="bottom">
+    <a href="index.html">
+      <span class="nav-icon">◉</span>
+      <span>Mining</span>
+    </a>
+    <a href="buy.html">
+      <span class="nav-icon">🛒</span>
+      <span>Buy</span>
+    </a>
+    <a href="balance.html" class="active">
+      <span class="nav-icon">▣</span>
+      <span>Balance</span>
+    </a>
+    <a href="products.html">
+      <span class="nav-icon">ⓒ</span>
+      <span>Products</span>
+    </a>
+    <a href="profile.html">
+      <span class="nav-icon">♙</span>
+      <span>Profile</span>
+    </a>
+  </nav>
+
+  <script src="js/script.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/withdrawal.js"></script>
+</body>
+</html>

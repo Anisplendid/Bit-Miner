@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Payment Confirmation | Bit-Miner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="back" href="crypto-address.html">‹</a>
+    <a class="brand">Payment Confirmation</a>
+  </header>
+  <main class="page narrow">
+    <section class="confirm-card">
+      <div class="checkmark">⏳</div>
+      <h1>Payment confirmation</h1>
+      <p>NOTE: Only click the "I Confirm I Have Paid" after you've made a deposit.</p>
+
+      <div class="amount-banner compact">
+        <span>Deposit amount</span>
+        <div class="amount-right">
+          <strong id="displayAmount">$0.00</strong>
+          <small id="displayEarnings">+$0.00 earn</small>
+        </div>
+      </div>
+
+      <div class="timer" id="countdown">02:00</div>
+      <button id="confirmPaid" class="btn primary full" disabled>I Confirm I Have Paid</button>
+    </section>
+  </main>
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+    <h2>Processing...</h2>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

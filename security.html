@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Security | Bit-Miner</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/support-security.css">
+</head>
+<body>
+  <header class="header">
+    <a href="profile.html" class="back">←</a>
+    <span class="header-title">Security</span>
+    <div class="header-actions"></div>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <h1>Security Settings</h1>
+    </div>
+
+    <section class="card">
+      <!-- 2FA -->
+      <div class="setting-item">
+        <div class="setting-info">
+          <strong>Two-Factor Authentication</strong>
+          <p>Extra protection for withdrawals</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="sec2FA">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Login Alerts -->
+      <div class="setting-item">
+        <div class="setting-info">
+          <strong>Login Alerts</strong>
+          <p>Get notified of new logins</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="secLoginAlert">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Anti-Phishing Code -->
+      <div class="setting-item">
+        <div class="setting-info">
+          <strong>Anti-Phishing Code</strong>
+          <p>Show a personal code in emails</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="secAntiPhish">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Withdrawal Whitelist -->
+      <div class="setting-item">
+        <div class="setting-info">
+          <strong>Withdrawal Address Whitelist</strong>
+          <p>Only allow withdrawals to saved addresses</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="secWhitelist">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="setting-item">
+        <div class="setting-info">
+          <strong>Session Timeout</strong>
+          <p>Auto logout after inactivity</p>
+        </div>
+        <select id="secTimeout" class="setting-select">
+          <option value="15">15 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="60">1 hour</option>
+          <option value="0">Never</option>
+        </select>
+      </div>
+    </section>
+
+    <p class="persist-note">All settings are saved on this device and will stay until you change or clear them.</p>
+  </main>
+
+  <nav class="bottom">
+    <a href="index.html"><span class="nav-icon">◉</span><span>Mining</span></a>
+    <a href="buy.html"><span class="nav-icon">🛒</span><span>Buy</span></a>
+    <a href="balance.html"><span class="nav-icon">▣</span><span>Balance</span></a>
+    <a href="products.html"><span class="nav-icon">ⓒ</span><span>Products</span></a>
+    <a href="profile.html" class="active"><span class="nav-icon">♙</span><span>Profile</span></a>
+  </nav>
+
+  <script src="js/script.js"></script>
+  <script src="js/support-security.js"></script>
+</body>
+</html>

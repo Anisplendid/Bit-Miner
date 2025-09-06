@@ -1,0 +1,578 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #f1f2f5;
+  color: #17181d;
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* Header */
+.top {
+  height: 74px;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e8;
+  display: flex;
+  align-items: center;
+  padding: 0 7%;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.brand {
+  font-weight: 800;
+  font-size: 23px;
+  text-decoration: none;
+  color: #18191d;
+}
+.back {
+  font-size: 40px;
+  line-height: 1;
+  color: #202126;
+  text-decoration: none;
+}
+.top > div {
+  margin-left: auto;
+  font-size: 28px;
+}
+
+/* Layout */
+.dashboard,
+.page {
+  max-width: 1000px;
+  margin: 35px auto;
+  padding: 0 22px;
+}
+.page.narrow { max-width: 720px; }
+
+.page-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px 0 30px;
+}
+.page-title h1 {
+  font-size: 34px;
+  margin: 0;
+}
+.info {
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+/* Promo card */
+.promo {
+  background: #fff;
+  border-radius: 28px;
+  padding: 38px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 12px 30px #0000000d;
+  margin-bottom: 18px;
+}
+.promo b { font-size: 34px; }
+.promo p {
+  font-size: 18px;
+  color: #8b8e9a;
+  margin: 12px 0 0;
+}
+.coin {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffc928, #f0a500);
+  display: grid;
+  place-items: center;
+  font-size: 48px;
+  color: #fff;
+  box-shadow: 0 6px 18px #f0a50044;
+}
+
+/* Balance card + Gauge */
+.balance-card,
+.calc-card,
+.address-card,
+.confirm-card {
+  background: #fff;
+  border-radius: 26px;
+  padding: 30px;
+  box-shadow: 0 12px 35px #0000000d;
+}
+
+.asset {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid #e7e7ea;
+  padding-bottom: 22px;
+}
+.asset .btc {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #f49a20;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+}
+.asset strong {
+  font-size: 26px;
+  display: block;
+}
+.asset small {
+  color: #858894;
+  font-size: 17px;
+}
+.asset > b {
+  margin-left: auto;
+  font-size: 35px;
+  color: #9295a0;
+}
+
+/* ===== GAUGE (matches the real BitMiner look) ===== */
+.gauge-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 10px;
+  overflow: hidden;
+}
+.gauge {
+  position: relative;
+  width: 340px;
+  height: 200px;
+}
+.gauge-arc {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 36px solid #e8e9ed;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(135deg);
+  box-sizing: border-box;
+}
+/* Soft inner highlight */
+.gauge-arc::after {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  border: 18px solid transparent;
+  border-top-color: #f5f6f8;
+  border-right-color: #f5f6f8;
+  opacity: 0.6;
+}
+
+/* Needle */
+.needle {
+  position: absolute;
+  width: 8px;
+  height: 120px;
+  left: 50%;
+  bottom: 8px;
+  margin-left: -4px;
+  background: linear-gradient(to top, #6b6e78, #b0b3bc);
+  border-radius: 4px 4px 2px 2px;
+  transform-origin: bottom center;
+  transform: rotate(-48deg);
+  z-index: 3;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.needle::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #8a8d97;
+  border-radius: 50%;
+  bottom: -6px;
+  left: 50%;
+  margin-left: -8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* Labels around the arc */
+.gauge-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.g-label {
+  position: absolute;
+  font-size: 13px;
+  font-weight: 700;
+  color: #a0a3ad;
+  transform: translate(-50%, -50%);
+}
+/* Positioned roughly along the semi-circle */
+.g-0    { left: 8%;   top: 92%; }
+.g-5k   { left: 14%;  top: 72%; }
+.g-25k  { left: 22%;  top: 48%; }
+.g-50k  { left: 32%;  top: 28%; }
+.g-100k { left: 44%;  top: 16%; }
+.g-250k { left: 56%;  top: 16%; }
+.g-500k { left: 68%;  top: 28%; }
+.g-1m   { left: 78%;  top: 48%; }
+.g-50m  { left: 86%;  top: 68%; }
+.g-500m { left: 92%;  top: 85%; }
+.g-750m { left: 96%;  top: 98%; }
+
+/* Start mining button */
+.mine-btn {
+  display: block;
+  width: 240px;
+  margin: 10px auto 8px;
+  position: relative;
+  text-align: center;
+  background: #2c88df;
+  color: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 800;
+  box-shadow: 0 6px 16px #2c88df44;
+}
+
+/* Bottom nav */
+.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 5px 16px;
+  z-index: 10;
+}
+.bottom a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #9295a0;
+  font-size: 22px;
+  gap: 4px;
+  text-decoration: none;
+}
+.bottom span:last-child {
+  font-size: 12px;
+  font-weight: 700;
+}
+.bottom .active { color: #3e86df; }
+
+/* Hero mini */
+.hero-mini { margin-bottom: 24px; }
+.hero-mini span,
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  color: #2d82dd;
+}
+.hero-mini h1 {
+  font-size: 40px;
+  margin: 7px 0;
+}
+.hero-mini p { color: #777b86; }
+
+/* Amount line + slider */
+.amount-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.amount-line span { color: #777b86; }
+.amount-line strong { font-size: 34px; }
+
+input[type=range] {
+  width: 100%;
+  margin: 30px 0;
+  accent-color: #2c88df;
+}
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  color: #858994;
+  font-size: 13px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 25px 0;
+}
+.stats div {
+  background: #f6f7f9;
+  border-radius: 14px;
+  padding: 18px;
+}
+.stats span,
+.stats b { display: block; }
+.stats span {
+  font-size: 12px;
+  color: #80848e;
+  margin-bottom: 7px;
+}
+.stats b { font-size: 18px; }
+
+/* Buttons */
+.btn {
+  border: 0;
+  border-radius: 13px;
+  padding: 16px 22px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+}
+.primary {
+  background: #2c88df;
+  color: #fff;
+}
+.full { width: 100%; }
+
+/* Crypto grid */
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.crypto-card {
+  border: 1px solid #e0e1e5;
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  text-align: left;
+  cursor: pointer;
+}
+.coin-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #edf3fb;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: #287bd0;
+  margin-bottom: 18px;
+}
+.crypto-card strong,
+.crypto-card small { display: block; }
+.crypto-card strong { font-size: 18px; }
+.crypto-card small {
+  color: #858995;
+  margin-top: 5px;
+}
+
+/* Address page */
+.selected {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.selected small,
+.selected strong { display: block; }
+.selected small { color: #888c96; }
+.selected strong { font-size: 23px; }
+.address-card > p {
+  color: #747983;
+  line-height: 1.6;
+}
+.address-row {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+.address-row input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid #dddfe4;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 14px;
+}
+.address-row button {
+  border: 0;
+  border-radius: 12px;
+  padding: 0 18px;
+  font-weight: 800;
+  background: #e9f2fc;
+  color: #2677c7;
+}
+
+/* Confirm */
+.confirm-card { text-align: center; }
+.checkmark { font-size: 48px; }
+.confirm-card h1 { font-size: 34px; }
+.confirm-card p {
+  color: #777b85;
+  line-height: 1.6;
+}
+.timer {
+  font-size: 54px;
+  font-weight: 900;
+  margin: 30px 0;
+  color: #2c88df;
+}
+.confirm-card button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Loader */
+.loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 20;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+}
+.loader.show { display: grid; }
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #dfeaf7;
+  border-top-color: #2c88df;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 18px;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success */
+.success {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+.success-icon {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #e5f6ec;
+  color: #22915a;
+  display: grid;
+  place-items: center;
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 22px;
+}
+.success h1 {
+  max-width: 650px;
+  font-size: 46px;
+  margin: 10px 0;
+}
+.success p {
+  color: #777b85;
+  font-size: 18px;
+}
+.success strong {
+  color: #2c88df;
+  margin: 10px 0 25px;
+}
+
+/* ===== Amount banner (deposit + tiny earnings) ===== */
+.amount-banner {
+  background: #edf3fb;
+  border: 1px solid #d0e0f5;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.amount-banner > span {
+  color: #5a6a85;
+  font-size: 14px;
+  font-weight: 600;
+}
+.amount-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+.amount-right strong {
+  font-size: 24px;
+  color: #1a6bbf;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.amount-right small {
+  font-size: 12px;
+  color: #2e9d5a;
+  font-weight: 700;
+}
+.amount-banner.compact {
+  margin: 18px 0;
+  padding: 14px 18px;
+}
+.amount-banner.compact .amount-right strong {
+  font-size: 22px;
+}
+.success-amount {
+  margin: 18px 0 8px;
+  max-width: 320px;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .promo b { font-size: 27px; }
+  .promo p { font-size: 15px; }
+  .coin {
+    width: 68px;
+    height: 68px;
+    font-size: 35px;
+  }
+  .gauge {
+    width: 280px;
+    height: 170px;
+  }
+  .gauge-arc {
+    width: 280px;
+    height: 280px;
+    border-width: 30px;
+  }
+  .needle {
+    height: 100px;
+  }
+  .g-label { font-size: 11px; }
+  .mine-btn {
+    width: 210px;
+    font-size: 17px;
+  }
+  .stats,
+  .crypto-grid {
+    grid-template-columns: 1fr;
+  }
+  .amount-line strong { font-size: 27px; }
+  .success h1 { font-size: 35px; }
+  .dashboard { padding-bottom: 100px; }
+}

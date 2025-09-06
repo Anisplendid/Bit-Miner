@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Support | Bit-Miner</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/support-security.css">
+</head>
+<body>
+  <header class="header">
+    <a href="profile.html" class="back">←</a>
+    <span class="header-title">Support</span>
+    <div class="header-actions"></div>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <h1>Contact Support</h1>
+    </div>
+
+    <section class="card support-card">
+      <p class="support-desc">Have an issue or question? Send us a message and our team will reply as soon as possible.</p>
+
+      <div class="form-group">
+        <label>Subject</label>
+        <select id="supportSubject">
+          <option value="">Select subject</option>
+          <option value="withdrawal">Withdrawal Issue</option>
+          <option value="deposit">Deposit Problem</option>
+          <option value="mining">Mining / Balance</option>
+          <option value="account">Account Issue</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Your Email (optional)</label>
+        <input type="email" id="supportEmail" placeholder="you@example.com">
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="supportMessage" rows="6" placeholder="Describe your issue in detail..."></textarea>
+      </div>
+
+      <button class="btn primary full" id="sendSupportBtn">Send Message</button>
+
+      <div id="supportSuccess" class="success-msg hidden">
+        ✓ Your message has been sent. We’ll get back to you soon.
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom">
+    <a href="index.html"><span class="nav-icon">◉</span><span>Mining</span></a>
+    <a href="buy.html"><span class="nav-icon">🛒</span><span>Buy</span></a>
+    <a href="balance.html"><span class="nav-icon">▣</span><span>Balance</span></a>
+    <a href="products.html"><span class="nav-icon">ⓒ</span><span>Products</span></a>
+    <a href="profile.html" class="active"><span class="nav-icon">♙</span><span>Profile</span></a>
+  </nav>
+
+  <script src="js/script.js"></script>
+  <script src="js/support-security.js"></script>
+</body>
+</html>

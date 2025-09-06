@@ -1,0 +1,285 @@
+/* ========== Withdrawal Styles ========== */
+
+.withdraw-card {
+  background: #1e1e2e !important;
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.withdraw-card h3 {
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.withdraw-card > p {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+/* Saved address */
+.saved-address-box {
+  background: #2a2a3d;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  border: 1px solid #3a3a50;
+  word-break: break-all;
+  font-size: 13px;
+}
+
+.saved-address-box .addr-text {
+  flex: 1;
+  color: #e0e0e0;
+}
+
+.saved-address-box .clear-addr {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+/* Min info */
+.min-info {
+  background: #2a2a3d;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #ccc;
+  line-height: 1.45;
+}
+
+.min-info strong {
+  color: #f59e0b;
+}
+
+/* NC link row */
+.nc-link-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #2a2a3d;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #93c5fd;
+  cursor: pointer;
+}
+
+.nc-logo-sm {
+  width: 28px;
+  height: 28px;
+  background: #1e3a8a;
+  color: #fbbf24;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.nc-link-row .arrow {
+  margin-left: auto;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Amount input + MAX button */
+.amount-input-wrap {
+  background: #2a2a3d;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  border: 1px solid #3a3a50;
+}
+
+.amount-input-wrap.error {
+  border-color: #ef4444;
+}
+
+.amount-input-wrap label {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.amount-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.amount-row input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  outline: none;
+  min-width: 0;
+}
+
+.amount-row input::placeholder {
+  color: #555;
+}
+
+.max-btn {
+  background: #3b4a6b;
+  color: #93c5fd;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.max-btn:active {
+  background: #4b5a7b;
+}
+
+.amount-error {
+  color: #ef4444;
+  font-size: 12px;
+  margin-bottom: 12px;
+  min-height: 18px;
+}
+
+/* Withdraw button */
+.withdraw-btn {
+  width: 100%;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.withdraw-btn:disabled {
+  background: #3b4a6b;
+  cursor: not-allowed;
+}
+
+/* Modal */
+.withdraw-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s;
+}
+
+.withdraw-modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.withdraw-modal {
+  background: #1e1e2e;
+  color: #fff;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px 20px 0 0;
+  padding: 24px 20px 32px;
+  position: relative;
+  transform: translateY(100%);
+  transition: 0.3s ease;
+}
+
+.withdraw-modal-overlay.show .withdraw-modal {
+  transform: translateY(0);
+}
+
+.withdraw-modal .close-x {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-size: 22px;
+  color: #aaa;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.withdraw-modal .wallet-icon {
+  font-size: 48px;
+  text-align: center;
+  margin: 8px auto 16px;
+}
+
+.withdraw-modal h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.withdraw-modal .desc {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.address-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #2a2a3d;
+  border-radius: 12px;
+  padding: 12px 14px;
+  gap: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #3a3a50;
+}
+
+.address-input-wrap input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.address-input-wrap input::placeholder {
+  color: #777;
+}
+
+.confirm-address-btn {
+  width: 100%;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}

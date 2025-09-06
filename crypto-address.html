@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Crypto Address | Bit-Miner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="back" href="crypto.html">‹</a>
+    <a class="brand">Crypto Address</a>
+  </header>
+  <main class="page narrow">
+    <section class="address-card">
+      <div class="amount-banner compact">
+        <span>Deposit amount</span>
+        <div class="amount-right">
+          <strong id="displayAmount">$0.00</strong>
+          <small id="displayEarnings">+$0.00 earn</small>
+        </div>
+      </div>
+
+      <div class="selected">
+        <span class="coin-icon" id="coinIcon">₿</span>
+        <div>
+          <small>Selected currency</small>
+          <strong id="cryptoName">BTC</strong>
+        </div>
+      </div>
+      <p>Send the exact amount to the address below.</p>
+      <div class="address-row">
+        <input id="cryptoAddress" readonly>
+        <button id="copyAddress">Copy</button>
+      </div>
+      <button class="btn primary full" id="addressContinue">Continue</button>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

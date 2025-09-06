@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mining Deposit | Bit-Miner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="back" href="index.html">‹</a>
+    <a class="brand">Mining Deposit</a>
+  </header>
+  <main class="page">
+    <div class="hero-mini">
+      <span>24 HOURS MINING</span>
+      <h1>Choose your deposit</h1>
+      <p>Adjust the amount to see your mining estimate.</p>
+    </div>
+    <section class="calc-card">
+      <div class="amount-line">
+        <span>Deposit amount</span>
+        <strong id="amount">$1,000</strong>
+      </div>
+      <input id="depositSlider" type="range" min="0" max="1000" step="1" value="0">
+      <div class="range-labels">
+        <span>$1,000</span>
+        <span>$500,000,000</span>
+      </div>
+      <div class="stats">
+        <div>
+          <span>Duration</span>
+          <b>24 Hours Mining</b>
+        </div>
+        <div>
+          <span>Return</span>
+          <b id="rate"></b>
+        </div>
+        <div>
+          <span>Earnings</span>
+          <b id="earnings"></b>
+        </div>
+        <div>
+          <span>Total</span>
+          <b id="total"></b>
+        </div>
+      </div>
+      <button id="continueBtn" class="btn primary full">Continue</button>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
